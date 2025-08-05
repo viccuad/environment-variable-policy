@@ -9,7 +9,6 @@ use kubewarden::{protocol_version_guest, request::ValidationRequest, validate_se
 use operators::*;
 use settings::Settings;
 
-mod operators;
 mod settings;
 
 #[no_mangle]
@@ -112,7 +111,7 @@ fn validate(payload: &[u8]) -> CallResult {
 mod tests {
     use super::*;
 
-    use crate::CONTAINS_ANY_OF_ERROR_MSG;
+    use operators::CONTAINS_ANY_OF_ERROR_MSG;
 
     use rstest::rstest;
 
